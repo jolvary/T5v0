@@ -31,6 +31,10 @@ for ($i=0;$i<80;$i++) {
             
             echo '<a href="page2.php"><button>Página anterior</button></a>';
 
+            echo '<br><br><br>','Si desea volver a iniciar sesión pulse el siguiente botón: ';
+            
+            echo '<a href="inicio.php"><button>Inicio</button></a>';
+
         } else {
 
             echo '<br><br><br>','Si desea volver a iniciar sesión pulse el siguiente botón: ';
@@ -40,8 +44,11 @@ for ($i=0;$i<80;$i++) {
         }
 
     } else {
+
         echo "Vuelva a iniciar sesión para acceder a esta página.";
+
         echo '<a href="inicio.php"><button>Iniciar Sesión</button></a>';
+        
     }
 
     ?>
