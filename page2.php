@@ -8,9 +8,13 @@ session_start();
 
     <?php
 
+#        if ($_SESSION) {
+#            var_dump($_SESSION);
+#        }
+
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             
-            echo $_SESSION['usuario'], "<br>\n\n";
+            echo $_SESSION['usuario'], "<br><br>";
             $password = $_SESSION['contraseña'];
 
             $lenpass = strlen(trim($password));
