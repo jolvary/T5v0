@@ -12,11 +12,13 @@ $first = 0;
 $second = 1;
 $fibo = array();
 
-for ($i=0;$i<80;$i++) {
+for ($i=0;$i<5;$i++) {
     array_push($fibo,$first,$second);
     $first = $second + $first;
     $second = $second + $first;
 }
+
+var_dump($fibo);
 
 if ($_POST) {
 
