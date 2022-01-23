@@ -1,9 +1,3 @@
-<?php
-
-session_start();
-
-?>
-
 <HTML>
 
     <?php
@@ -12,13 +6,15 @@ session_start();
 #            var_dump($_SESSION);
 #        }
 
+        session_start();
+
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-            
-            echo $_SESSION['usuario'], "<br><br>";
-            $password = $_SESSION['contraseña'];
+
+        $password = $_SESSION['contraseña'];
+
+        function c_piramide($password) {
 
             $lenpass = strlen(trim($password));
-            $newpass = $password;
                         
             for ($i=0;$i<$lenpass;$i++) {
               
@@ -34,19 +30,33 @@ session_start();
                     
             }
 
+        }
+
+        function b_piramide($password) {
+
+            $lenpass = strlen(trim($password));
+
             for($i = 1; $i < $lenpass; $i += 2) {
                 
-                $newpass[$i] = '#';
+                $password[$i] = '#';
                 
             }
 
             for($i = 4; $i < $lenpass; $i += 5) {
                 
-                $newpass[$i] = '*';
+                $password[$i] = '*';
                 
-            }            
+            }
 
-            echo $newpass;
+            return $password;
+
+        }
+            
+            echo $_SESSION['usuario'], "<br><br>";
+            
+            echo c_piramide($password);
+
+            echo b_piramide($password);
 
             echo '<br><br><br>','Para ves más información sobre la cuenta pulse sobre el siguiente botón: ';
             
